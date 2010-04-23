@@ -165,6 +165,10 @@ static const CGFloat kControlPadding = 8;
 
     // XXXjoe For some reason I need to re-add the control as a subview or else
     // the re-use of the cell will cause the control to fail to paint itself on occasion
+    // --Noah: the reason is that the label of the cell is also getting added to the
+    // cell's content view, and its rect is filling the entire cell.  This sort of fixes
+    // the bug by making sure that the control sits above the label (and is visible)
+    // rather than sitting below the label (and being hidden by it).
     [self.contentView addSubview:_control];
     _control.frame = CGRectMake(minX, floor(self.contentView.height/2 - _control.height/2),
                                 contentWidth, _control.height);
@@ -187,7 +191,9 @@ static const CGFloat kControlPadding = 8;
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)setObject:(id)object {
   if (object != _control && object != _item) {
-    [_control removeFromSuperview];
+    if (_control.superview == self.contentView) {
+      [_control removeFromSuperview];
+    }
     TT_RELEASE_SAFELY(_control);
     TT_RELEASE_SAFELY(_item);
 
