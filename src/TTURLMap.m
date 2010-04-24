@@ -361,7 +361,21 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)removeObject:(id)object {
-  // XXXjoe IMPLEMENT ME
+  NSMutableArray* URLsToRemove = [NSMutableArray array];
+  for (NSString* URL in _objectMappings) {
+    if (object == [_objectMappings objectForKey:URL]) {
+      [URLsToRemove addObject:URL];
+    }
+  }
+  [_objectMappings removeObjectsForKeys:URLsToRemove];
+
+  NSMutableArray* patternsToRemove = [NSMutableArray array];
+  for (TTURLNavigatorPattern* pattern in _objectPatterns) {
+    if (object == pattern.targetObject) {
+        [patternsToRemove addObject:pattern];
+    }
+  }
+  [_objectPatterns removeObjectsInArray:patternsToRemove];
 }
 
 
