@@ -16,8 +16,14 @@
 
 #import "Three20/TTLabel.h"
 
-#import "Three20/TTGlobalCore.h"
+// Style
+#import "Three20/TTGlobalStyle.h"
 #import "Three20/TTDefaultStyleSheet.h"
+#import "Three20/TTStyleContext.h"
+#import "Three20/TTStyle.h"
+
+// Core
+#import "Three20/TTCorePreprocessorMacros.h"
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

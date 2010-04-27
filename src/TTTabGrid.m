@@ -16,12 +16,17 @@
 
 #import "Three20/TTTabGrid.h"
 
+// UI
+#import "Three20/TTButton.h"
+#import "Three20/UIViewAdditions.h"
+
+// Style
+#import "Three20/TTGlobalStyle.h"
 #import "Three20/TTStyleSheet.h"
+#import "Three20/TTGridLayout.h"
 
+// Core
 #import "Three20/TTCorePreprocessorMacros.h"
-
-#import "Three20/TTLayout.h"
-#import "Three20/TTGlobalUI.h"
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

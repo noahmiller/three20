@@ -16,11 +16,23 @@
 
 #import "Three20/TTButton.h"
 
+// UI
+#import "Three20/UIImageAdditions.h"
+
+// UI (private)
 #import "Three20/TTButtonContent.h"
 
-#import "Three20/TTGlobalUI.h"
-
+// Style
+#import "Three20/TTGlobalStyle.h"
 #import "Three20/TTDefaultStyleSheet.h"
+#import "Three20/TTStyleContext.h"
+#import "Three20/TTTextStyle.h"
+#import "Three20/TTPartStyle.h"
+#import "Three20/TTBoxStyle.h"
+#import "Three20/TTImageStyle.h"
+
+// Core
+#import "Three20/TTCorePreprocessorMacros.h"
 
 static const CGFloat kHPadding = 8;
 static const CGFloat kVPadding = 7;

@@ -16,12 +16,19 @@
 
 #import "Three20/TTActivityLabel.h"
 
-#import "Three20/TTGlobalUI.h"
+// UI
 #import "Three20/TTGlobalUINavigator.h"
-
 #import "Three20/TTView.h"
-#import "Three20/TTDefaultStyleSheet.h"
 #import "Three20/TTButton.h"
+#import "Three20/UIViewAdditions.h"
+#import "Three20/UIFontAdditions.h"
+
+// Style
+#import "Three20/TTGlobalStyle.h"
+#import "Three20/TTDefaultStyleSheet.h"
+
+// Core
+#import "Three20/TTCorePreprocessorMacros.h"
 
 static CGFloat kMargin          = 10;
 static CGFloat kPadding         = 15;
@@ -122,19 +129,28 @@ static CGFloat kProgressMargin  = 6;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithFrame:(CGRect)frame style:(TTActivityLabelStyle)style {
-  return [self initWithFrame:frame style:style text:nil];
+  if (self = [self initWithFrame:frame style:style text:nil]) {
+  }
+
+  return self;
 }
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithStyle:(TTActivityLabelStyle)style {
-  return [self initWithFrame:CGRectZero style:style text:nil];
+  if (self = [self initWithFrame:CGRectZero style:style text:nil]) {
+  }
+
+  return self;
 }
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithFrame:(CGRect)frame {
-  return [self initWithFrame:frame style:TTActivityLabelStyleWhiteBox text:nil];
+  if (self = [self initWithFrame:frame style:TTActivityLabelStyleWhiteBox text:nil]) {
+  }
+
+  return self;
 }
 
 

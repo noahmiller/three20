@@ -26,8 +26,10 @@
  */
 @interface TTURLRequestModel : TTModel <TTURLRequestDelegate> {
   TTURLRequest* _loadingRequest;
+
   NSDate*       _loadedTime;
   NSString*     _cacheKey;
+
   BOOL          _isLoadingMore;
   BOOL          _hasNoMore;
 }
@@ -42,7 +44,10 @@
  */
 @property (nonatomic, copy)   NSString* cacheKey;
 
-@property (nonatomic)         BOOL      hasNoMore;
+/**
+ * Not used internally, but intended for book-keeping purposes when making requests.
+ */
+@property (nonatomic) BOOL hasNoMore;
 
 /**
  * Resets the model to its original state before any data was loaded.

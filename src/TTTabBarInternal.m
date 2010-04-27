@@ -16,12 +16,14 @@
 
 #import "Three20/TTTabBarInternal.h"
 
-#import "Three20/TTGlobalUI.h"
+// UI
 #import "Three20/TTTab.h"
+#import "Three20/UIViewAdditions.h"
 
         CGFloat   kTabMargin      = 10;
 const   NSInteger kMaxBadgeNumber = 99;
 static  CGFloat   kPadding        = 10;
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////

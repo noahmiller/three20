@@ -16,6 +16,7 @@
 
 #import "Three20/TTTableItem.h"
 
+// Core
 #import "Three20/TTCorePreprocessorMacros.h"
 
 
@@ -43,7 +44,10 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithCoder:(NSCoder*)decoder {
-  return [self init];
+  if (self = [self init]) {
+  }
+
+  return self;
 }
 
 

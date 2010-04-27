@@ -14,8 +14,10 @@
 // limitations under the License.
 //
 
-#import "Three20/TTStyle.h"
+// Style
+#import "Three20/TTStyleDelegate.h"
 
+@class TTStyle;
 @class TTLayout;
 
 /**

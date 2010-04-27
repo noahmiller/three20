@@ -27,9 +27,9 @@
 #import "Three20/TTRequestLoader.h"
 
 // Core
-#import "Three20/TTGlobalCore.h"
 #import "Three20/TTGlobalCorePaths.h"
 #import "Three20/TTDebugFlags.h"
+#import "Three20/TTDebug.h"
 
 static const NSTimeInterval kFlushDelay = 0.3;
 static const NSTimeInterval kTimeout = 300.0;
@@ -119,20 +119,30 @@ static TTURLRequestQueue* gMainQueue = nil;
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (BOOL)loadFromCache:(NSString*)URL cacheKey:(NSString*)cacheKey
-    expires:(NSTimeInterval)expirationAge fromDisk:(BOOL)fromDisk data:(id*)data
-    error:(NSError**)error timestamp:(NSDate**)timestamp {
+- (BOOL)loadFromCache: (NSString*)URL
+             cacheKey: (NSString*)cacheKey
+              expires: (NSTimeInterval)expirationAge
+             fromDisk: (BOOL)fromDisk
+                 data: (id*)data
+                error: (NSError**)error
+            timestamp: (NSDate**)timestamp {
+  TTDASSERT(nil != data);
+
   UIImage* image = [[TTURLCache sharedCache] imageForURL:URL fromDisk:fromDisk];
-  if (image) {
+
+  if (nil != image) {
     *data = image;
     return YES;
+
   } else if (fromDisk) {
     if (TTIsBundleURL(URL)) {
       *data = [self loadFromBundle:URL error:error];
       return YES;
+
     } else if (TTIsDocumentsURL(URL)) {
       *data = [self loadFromDocuments:URL error:error];
       return YES;
+
     } else {
       *data = [[TTURLCache sharedCache] dataForKey:cacheKey expires:expirationAge
                                         timestamp:timestamp];
@@ -159,7 +169,7 @@ static TTURLRequestQueue* gMainQueue = nil;
 
     if ([self loadFromCache:request.urlPath cacheKey:request.cacheKey
               expires:request.cacheExpirationAge
-              fromDisk:!_suspended && request.cachePolicy & TTURLRequestCachePolicyDisk
+              fromDisk:!_suspended && (request.cachePolicy & TTURLRequestCachePolicyDisk)
               data:&data error:&error timestamp:&timestamp]) {
       request.isLoading = NO;
 

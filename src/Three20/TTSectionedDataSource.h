@@ -14,6 +14,7 @@
 // limitations under the License.
 //
 
+// UI
 #import "Three20/TTTableViewDataSource.h"
 
 @interface TTSectionedDataSource : TTTableViewDataSource {
@@ -29,6 +30,7 @@
  *
  *   @"section title", item, item, @"section title", item, item, ...
  *
+ * Where item is generally a type of TTTableItem.
  */
 + (TTSectionedDataSource*)dataSourceWithObjects:(id)object,...;
 
@@ -37,9 +39,24 @@
  *
  *   @"section title", arrayOfItems, @"section title", arrayOfItems, ...
  *
+ * Where arrayOfItems is generally an array of items of type TTTableItem.
  */
 + (TTSectionedDataSource*)dataSourceWithArrays:(id)object,...;
 
+/**
+ *  @param items
+ *
+ *    An array of arrays, where each array is the contents of a
+ *    section, to be listed under the section title held in the
+ *    corresponding index of the `section` array.
+ *
+ *  @param sections
+ *
+ *    An array of strings, where each string is the title
+ *    of a section.
+ *
+ *  The items and sections arrays should be of equal length.
+ */
 + (TTSectionedDataSource*)dataSourceWithItems:(NSArray*)items sections:(NSArray*)sections;
 
 - (id)initWithItems:(NSArray*)items sections:(NSArray*)sections;

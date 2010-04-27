@@ -16,8 +16,11 @@
 
 #import "Three20/TTYouTubeView.h"
 
-#import "Three20/TTGlobalUI.h"
+// UI
+#import "Three20/UIViewAdditions.h"
 
+// Core
+#import "Three20/TTCorePreprocessorMacros.h"
 
 static CGFloat kDefaultWidth = 140;
 static CGFloat kDefaultHeight = 105;

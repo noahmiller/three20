@@ -14,8 +14,10 @@
 // limitations under the License.
 //
 
+#import <Foundation/Foundation.h>
+
 // Network
-#import "Three20/TTGlobalNetwork.h"
+#import "Three20/TTURLRequestCachePolicy.h"
 
 // Core
 #import "Three20/TTCorePreprocessorMacros.h" // For __TTDEPRECATED_METHOD
@@ -91,6 +93,8 @@
  *
  * @see TTURLDataResponse
  * @see TTURLImageResponse
+ * @see TTURLXMLResponse
+ * @see TTURLJSONResponse
  */
 @property (nonatomic, retain) id<TTURLResponse> response;
 
@@ -106,7 +110,7 @@
 /**
  * The content type of the data in the request.
  *
- * If not provided and httpMethod is POST/PUT, then contentType is multipart/form-data.
+ * If not provided and httpMethod is POST/PUT, then contentType is @"multipart/form-data".
  */
 @property (nonatomic, copy) NSString* contentType;
 

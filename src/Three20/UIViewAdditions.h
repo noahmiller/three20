@@ -17,8 +17,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import "Three20/TTGlobalCore.h"
-
 @interface UIView (TTCategory)
 
 /**
@@ -86,28 +84,6 @@
  * Return the y coordinate on the screen.
  */
 @property (nonatomic, readonly) CGFloat ttScreenY;
-
-#ifdef DEBUG
-
-/**
- * Return the x coordinate on the screen.
- *
- * This method is being rejected by Apple due to false-positive private api static analysis.
- *
- * @deprecated
- */
-@property (nonatomic, readonly) CGFloat screenX __TTDEPRECATED_METHOD;
-
-/**
- * Return the y coordinate on the screen.
- *
- * This method is being rejected by Apple due to false-positive private api static analysis.
- *
- * @deprecated
- */
-@property (nonatomic, readonly) CGFloat screenY __TTDEPRECATED_METHOD;
-
-#endif
 
 /**
  * Return the x coordinate on the screen, taking into account scroll views.

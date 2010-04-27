@@ -17,8 +17,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import "Three20/TTGlobalCore.h"
-
 @interface UIViewController (TTCategory)
 
 /**
@@ -70,20 +68,6 @@
  * This is an App Store-compatible version of previousViewController.
  */
 - (UIViewController*)ttPreviousViewController;
-
-#ifdef DEBUG
-
-/**
- * The view controller that comes before this one in a navigation controller's history.
- *
- * This has been deprecated due to App Store rejections. Please use ttPreviousViewController
- * from now on.
- *
- * @deprecated
- */
-- (UIViewController*)previousViewController __TTDEPRECATED_METHOD;
-
-#endif
 
 /**
  * The view controller that comes after this one in a navigation controller's history.

@@ -16,10 +16,13 @@
 
 #import "Three20/TTSearchDisplayController.h"
 
+// UI
 #import "Three20/TTGlobalUI.h"
-
 #import "Three20/TTTableViewController.h"
 #import "Three20/TTTableViewDataSource.h"
+
+// Core
+#import "Three20/TTCorePreprocessorMacros.h"
 
 const int kTTSearchBarBackgroundTag = 18942;
 

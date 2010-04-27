@@ -16,18 +16,25 @@
 
 #import "Three20/TTThumbsViewController.h"
 
-#import "Three20/TTGlobalCoreLocale.h"
+// UI
 #import "Three20/TTGlobalUI.h"
 #import "Three20/TTGlobalUINavigator.h"
-#import "Three20/TTGlobalStyle.h"
-
+#import "Three20/TTNavigator.h"
 #import "Three20/TTThumbsDataSource.h"
 #import "Three20/TTThumbsTableViewCell.h"
-#import "Three20/TTPhotoViewController.h"
-#import "Three20/TTNavigator.h"
-#import "Three20/TTPhotoSource.h"
 #import "Three20/TTPhoto.h"
+#import "Three20/TTPhotoSource.h"
+#import "Three20/TTPhotoViewController.h"
+#import "Three20/UIViewAdditions.h"
+#import "Three20/UIViewControllerAdditions.h"
+
+// Style
+#import "Three20/TTGlobalStyle.h"
 #import "Three20/TTStyleSheet.h"
+
+// Core
+#import "Three20/TTGlobalCoreLocale.h"
+#import "Three20/TTCorePreprocessorMacros.h"
 
 static CGFloat kThumbnailRowHeight = 79;
 
@@ -55,11 +62,13 @@ static CGFloat kThumbnailRowHeight = 79;
 - (id)initWithQuery:(NSDictionary*)query {
   id<TTThumbsViewControllerDelegate> delegate = [query objectForKey:@"delegate"];
   if (delegate) {
-    return [self initWithDelegate:delegate];
+    self = [self initWithDelegate:delegate];
 
   } else {
-    return [self init];
+    self = [self init];
   }
+
+  return self;
 }
 
 

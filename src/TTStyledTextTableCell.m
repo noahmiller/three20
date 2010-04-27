@@ -18,11 +18,13 @@
 
 // UI
 #import "Three20/TTStyledTextLabel.h"
-#import "Three20/TTGlobalUI.h"
+#import "Three20/UIViewAdditions.h"
+#import "Three20/UITableViewAdditions.h"
 
 // Style
-#import "Three20/TTDefaultStyleSheet.h"
 #import "Three20/TTGlobalStyle.h"
+#import "Three20/TTDefaultStyleSheet.h"
+#import "Three20/TTStyledText.h"
 
 // Core
 #import "Three20/TTCorePreprocessorMacros.h"

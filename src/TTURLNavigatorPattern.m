@@ -16,11 +16,13 @@
 
 #import "Three20/TTURLNavigatorPattern.h"
 
+// UI (private)
 #import "Three20/TTURLPatternInternal.h"
-
 #import "Three20/TTURLWildcard.h"
 #import "Three20/TTURLArguments.h"
 
+// Core
+#import "Three20/TTCorePreprocessorMacros.h"
 #import "Three20/TTDebug.h"
 #import "Three20/NSStringAdditions.h"
 
@@ -61,13 +63,19 @@ static NSString* kUniversalURLPattern = @"*";
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithTarget:(id)target {
-  return [self initWithTarget:target mode:TTNavigationModeNone];
+  if (self = [self initWithTarget:target mode:TTNavigationModeNone]) {
+  }
+
+  return self;
 }
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)init {
-  return [self initWithTarget:nil];
+  if (self = [self initWithTarget:nil]) {
+  }
+
+  return self;
 }
 
 

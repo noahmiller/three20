@@ -16,17 +16,27 @@
 
 #import "Three20/TTLauncherView.h"
 
+// UI
+#import "Three20/TTGlobalUI.h"
+#import "Three20/TTLauncherButton.h"
+#import "Three20/TTLauncherItem.h"
 #import "Three20/TTLauncherViewDelegate.h"
+#import "Three20/TTPageControl.h"
+#import "Three20/UIViewAdditions.h"
+
+// UI (private)
 #import "Three20/TTLauncherScrollView.h"
 
-#import "Three20/TTGlobalUI.h"
-#import "Three20/TTDebugFlags.h"
+// Style
+#import "Three20/TTGlobalStyle.h"
 
+// Network
 #import "Three20/TTURLRequest.h"
 #import "Three20/TTUserInfo.h"
-#import "Three20/TTLauncherItem.h"
-#import "Three20/TTLauncherButton.h"
-#import "Three20/TTPageControl.h"
+
+// Core
+#import "Three20/TTDebug.h"
+#import "Three20/TTDebugFlags.h"
 
 static const CGFloat kMargin = 0;
 static const CGFloat kPadding = 0;

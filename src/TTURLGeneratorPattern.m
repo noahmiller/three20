@@ -16,6 +16,7 @@
 
 #import "Three20/TTURLGeneratorPattern.h"
 
+// UI (private)
 #import "Three20/TTURLWildcard.h"
 
 
@@ -44,7 +45,10 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)init {
-  return [self initWithTargetClass:nil];
+  if (self = [self initWithTargetClass:nil]) {
+  }
+
+  return self;
 }
 
 

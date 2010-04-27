@@ -16,7 +16,8 @@
 
 #import "Three20/TTPopupViewController.h"
 
-#import "Three20/TTGlobalUI.h"
+// UI
+#import "Three20/UIViewControllerAdditions.h"
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

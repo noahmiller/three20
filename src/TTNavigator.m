@@ -16,20 +16,30 @@
 
 #import "Three20/TTNavigator.h"
 
-#import "Three20/TTNavigatorWindow.h"
-#import "Three20/TTNavigatorDelegate.h"
-
-#import "Three20/TTGlobalUI.h"
+// UI
 #import "Three20/TTGlobalUINavigator.h"
-#import "Three20/TTDebugFlags.h"
+#import "Three20/TTNavigatorDelegate.h"
+#import "Three20/UIViewControllerAdditions.h"
 
+// - Controllers
+#import "Three20/TTPopupViewController.h"
+#import "Three20/TTSearchDisplayController.h"
+#import "Three20/TTTableViewController.h"
+
+// UI (private)
+#import "Three20/TTNavigatorWindow.h"
+
+// Network
 #import "Three20/TTURLAction.h"
 #import "Three20/TTURLMap.h"
 #import "Three20/TTURLNavigatorPattern.h"
 
-#import "Three20/TTPopupViewController.h"
-#import "Three20/TTSearchDisplayController.h"
-#import "Three20/TTTableViewController.h"
+// Core
+#import "Three20/TTGlobalCore.h"
+#import "Three20/TTCorePreprocessorMacros.h"
+#import "Three20/TTDebug.h"
+#import "Three20/TTDebugFlags.h"
+#import "Three20/NSDateAdditions.h"
 
 static NSString* kNavigatorHistoryKey           = @"TTNavigatorHistory";
 static NSString* kNavigatorHistoryTimeKey       = @"TTNavigatorHistoryTime";

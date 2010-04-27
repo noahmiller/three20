@@ -16,12 +16,25 @@
 
 #import "Three20/TTStyledTextLabel.h"
 
-#import "Three20/TTGlobalUI.h"
-
-#import "Three20/TTStyledNode.h"
-#import "Three20/TTStyledFrame.h"
-#import "Three20/TTStyleSheet.h"
+// UI
 #import "Three20/TTTableView.h"
+#import "Three20/UIViewAdditions.h"
+
+// Style
+#import "Three20/TTGlobalStyle.h"
+#import "Three20/TTStyledText.h"
+#import "Three20/TTStyledNode.h"
+#import "Three20/TTStyleSheet.h"
+#import "Three20/TTStyledElement.h"
+#import "Three20/TTStyledLinkNode.h"
+#import "Three20/TTStyledTextNode.h"
+
+// - Styled frames
+#import "Three20/TTStyledInlineFrame.h"
+#import "Three20/TTStyledTextFrame.h"
+
+// Core
+#import "Three20/TTCorePreprocessorMacros.h"
 
 static const CGFloat kCancelHighlightThreshold = 4;
 

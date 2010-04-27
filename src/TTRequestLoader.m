@@ -17,16 +17,16 @@
 #import "Three20/TTRequestLoader.h"
 
 // Network
+#import "Three20/TTGlobalNetwork.h"
 #import "Three20/TTURLRequest.h"
 #import "Three20/TTURLRequestDelegate.h"
 #import "Three20/TTURLRequestQueue.h"
 #import "Three20/TTURLResponse.h"
 
 // Core
-#import "Three20/TTCorePreprocessorMacros.h"
+#import "Three20/NSObjectAdditions.h"
 #import "Three20/TTDebug.h"
 #import "Three20/TTDebugFlags.h"
-#import "Three20/TTGlobalCore.h"
 
 static const NSInteger kLoadMaxRetries = 2;
 
@@ -114,6 +114,11 @@ static const NSInteger kLoadMaxRetries = 2;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)addRequest:(TTURLRequest*)request {
+  TTDASSERT([_urlPath isEqualToString:request.urlPath]);
+  TTDASSERT(_cacheKey == request.cacheKey);
+  TTDASSERT(_cachePolicy == request.cachePolicy);
+  TTDASSERT(_cacheExpirationAge == request.cacheExpirationAge);
+
   [_requests addObject:request];
 }
 
@@ -179,15 +184,17 @@ static const NSInteger kLoadMaxRetries = 2;
 
     [_requests removeObjectAtIndex:index];
   }
+
   if (![_requests count]) {
     [_queue performSelector:@selector(loaderDidCancel:wasLoading:) withObject:self
                  withObject:(id)!!_connection];
-    if (_connection) {
+    if (nil != _connection) {
       TTNetworkRequestStopped();
       [_connection cancel];
       TT_RELEASE_SAFELY(_connection);
     }
     return NO;
+
   } else {
     return YES;
   }
@@ -352,8 +359,8 @@ didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge{
 
   if ([error.domain isEqualToString:NSURLErrorDomain] && error.code == NSURLErrorCannotFindHost
       && _retriesLeft) {
-    // If there is a network error then we will wait and retry a few times just in case
-    // it was just a temporary blip in connectivity
+    // If there is a network error then we will wait and retry a few times in case
+    // it was just a temporary blip in connectivity.
     --_retriesLeft;
     [self load:[NSURL URLWithString:_urlPath]];
 

@@ -16,10 +16,13 @@
 
 #import "Three20/TTURLPattern.h"
 
+// UI (Private)
 #import "Three20/TTURLWildcard.h"
 #import "Three20/TTURLLiteral.h"
 
-#import "Three20/TTGlobalCore.h"
+// Core
+#import "Three20/TTCorePreprocessorMacros.h"
+#import "Three20/NSStringAdditions.h"
 
 #import <objc/runtime.h>
 
